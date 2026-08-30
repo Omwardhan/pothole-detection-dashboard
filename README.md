@@ -16,7 +16,7 @@ A real-time, industrial-grade monitoring dashboard for an edge AI pothole detect
 1. **Camera Sensor**: OV5647 Camera captures road frames on the vehicle/test setup.
 2. **Picamera2 + YOLOv8**: Python service running on Raspberry Pi 4 processes frames through the YOLOv8 model in real-time.
 3. **Cloud Firestore**: Detections are pushed to the `detections` collection with confirmed schema (`confidence`, `class`, `timestamp`, `camera_id`, `test`).
-4. **Flask Live Stream**: Raspberry Pi exposes an MJPEG HTTP live stream on `http://172.20.10.2:5000/video`.
+4. **Flask Live Stream**: Raspberry Pi exposes an MJPEG HTTP live stream on `http://YOUR_PI_IP:5000/video`.
 5. **Web Monitoring Dashboard**: React + Vite application connects to Firestore via realtime `onSnapshot()` listeners and renders the live camera feed and detection statistics.
 
 ---
@@ -77,7 +77,7 @@ Configure `.env` with your settings:
 VITE_USE_MOCK_DATA=false
 
 # Raspberry Pi Flask MJPEG live stream URL
-VITE_PI_VIDEO_URL=http://172.20.10.2:5000/video
+VITE_PI_VIDEO_URL=http://YOUR_PI_IP:5000/video
 
 # Firebase Web App Configuration
 VITE_FIREBASE_API_KEY=your_api_key
