@@ -23,13 +23,14 @@ dist-ssr
 *.sln
 *.sw?
 
-# Environment variables
+# Environment variables & secrets
 .env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env.*
+!.env.example
+*.env
 
-# Service account credentials (never commit)
+# Service account & credentials (never commit)
 *firebase-key*.json
 *serviceAccount*.json
+*credentials*.json
+*secret*.json
